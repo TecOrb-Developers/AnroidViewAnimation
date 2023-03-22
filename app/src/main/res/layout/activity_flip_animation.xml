@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".FlipAnimation">
+        <ImageView
+            android:id="@+id/viewBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:src="@drawable/viewback"
+            app:layout_constraintBottom_toBottomOf="@id/header_title"
+            app:layout_constraintStart_toStartOf="@id/guide3"
+            app:layout_constraintTop_toTopOf="@id/header_title" />
+
+        <TextView
+            android:id="@+id/header_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp"
+            android:layout_marginTop="50dp"
+            android:text="Animation View"
+            android:textColor="#5FCDEB"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+
+        <TextView
+            android:id="@+id/nextClick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Next"
+            android:background="@drawable/textview_corner"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="7dp"
+            android:paddingBottom="7dp"
+            android:gravity="center"
+            android:textColor="#fff"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@id/guide3"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guide4" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="20dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="20dp" />
+
+        <TextView
+            android:id="@+id/verticalFlip"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/textview_corner"
+            android:fontFamily="sans-serif-medium"
+            android:padding="7dp"
+            android:text="Vertical flip"
+            android:textColor="#fff"
+            android:gravity="center"
+
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@id/flip_vertical"
+            app:layout_constraintEnd_toEndOf="@+id/horizontalFlip"
+            app:layout_constraintStart_toStartOf="@id/guide3"
+            app:layout_constraintTop_toBottomOf="@id/header_title" />
+
+        <com.e.hranimation.ImageFlip
+            android:id="@+id/flip_vertical"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            app:autoFlipBack="false"
+            app:autoFlipBackTime="1000"
+            app:flipDuration="500"
+            app:flipEnabled="true"
+            app:flipFrom="back"
+            app:flipOnTouch="false"
+            app:flipType="vertical"
+            app:layout_constraintStart_toEndOf="@id/verticalFlip"
+            app:layout_constraintEnd_toEndOf="@id/guide4"
+            app:layout_constraintTop_toBottomOf="@id/header_title">
+
+            <ImageView
+                android:id="@+id/imgBackCard"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:gravity="center"
+                android:src="@drawable/card2" />
+
+            <ImageView
+                android:id="@+id/imgFrontCard"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:gravity="center"
+                android:src="@drawable/card1" />
+
+
+        </com.e.hranimation.ImageFlip>
+
+        <TextView
+            android:id="@+id/horizontalFlip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/textview_corner"
+            android:fontFamily="sans-serif-medium"
+            android:padding="7dp"
+            android:gravity="center"
+            android:text="Horizontal flip"
+            android:textColor="#fff"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/flip_horizontal"
+            app:layout_constraintStart_toStartOf="@id/guide3"
+            app:layout_constraintTop_toTopOf="@+id/flip_horizontal" />
+
+        <com.e.hranimation.ImageFlip
+            android:id="@+id/flip_horizontal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            app:autoFlipBack="false"
+            app:autoFlipBackTime="1000"
+            app:flipDuration="500"
+            app:flipEnabled="true"
+            app:flipFrom="back"
+            app:flipOnTouch="false"
+            app:flipType="vertical"
+            app:layout_constraintEnd_toEndOf="@id/guide4"
+            app:layout_constraintStart_toEndOf="@id/horizontalFlip"
+            app:layout_constraintTop_toBottomOf="@id/flip_vertical">
+
+            <ImageView
+                android:id="@+id/imgBackCard1"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:gravity="center"
+                android:src="@drawable/cardback" />
+
+            <ImageView
+                android:id="@+id/imgFrontCard1"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:gravity="center"
+                android:src="@drawable/cardfront" />
+        </com.e.hranimation.ImageFlip>
+
+
+        <TextView
+            android:id="@+id/textFlip"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/textview_corner"
+            android:fontFamily="sans-serif-medium"
+            android:padding="7dp"
+            android:text="Details Flip"
+            android:textColor="#fff"
+            android:gravity="center"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/flip_circular"
+            app:layout_constraintEnd_toEndOf="@+id/horizontalFlip"
+            app:layout_constraintStart_toStartOf="@id/guide3"
+            app:layout_constraintTop_toTopOf="@+id/flip_circular" />
+
+        <com.e.hranimation.ImageFlip
+            android:id="@+id/flip_circular"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="30dp"
+            app:autoFlipBack="false"
+            app:autoFlipBackTime="1000"
+            app:flipDuration="500"
+            app:flipEnabled="true"
+            app:flipFrom="back"
+            app:flipOnTouch="false"
+            app:flipType="vertical"
+            android:layout_marginStart="20dp"
+            app:layout_constraintEnd_toEndOf="@id/guide4"
+            app:layout_constraintStart_toEndOf="@id/textFlip"
+            app:layout_constraintTop_toBottomOf="@id/flip_horizontal">
+
+            <TextView
+                android:id="@+id/imgFrontCard2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Name: Honda\nModel: 101x"
+                android:fontFamily="sans-serif-medium"
+                android:padding="7dp"
+                android:textColor="#EBE95F"
+                android:textSize="12sp" />
+
+
+                <ImageView
+                    android:id="@+id/imgBackCard2"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:gravity="center"
+                    android:src="@drawable/icon"/>
+        </com.e.hranimation.ImageFlip>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
